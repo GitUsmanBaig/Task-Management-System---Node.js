@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
-const mongoString = "mongodb+srv://musmanbaig2003:Usman2003@cluster0.s5b7diq.mongodb.net/TaskManager";
+const mongoString = "mongodb+srv://<username>:<password>@cluster0.s5b7diq.mongodb.net/TaskManager";
 mongoose.connect(mongoString, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Successfully connected to MongoDB Atlas.'))
     .catch(err => console.error('Connection error', err));
