@@ -4,12 +4,11 @@ const { Schema } = mongoose;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 app.use(express.json());
 
-// Establish connection to MongoDB
-mongoose.connect('mongodb://localhost:27017/taskManager', {  })
-    .then(() => console.log('Successfully connected to MongoDB.'))
+const mongoString = "mongodb+srv://musmanbaig2003:Usman2003@cluster0.s5b7diq.mongodb.net/TaskManager";
+mongoose.connect(mongoString, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Successfully connected to MongoDB Atlas.'))
     .catch(err => console.error('Connection error', err));
 
 // Define user schema and model
